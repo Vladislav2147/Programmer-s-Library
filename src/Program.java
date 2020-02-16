@@ -1,9 +1,9 @@
-import Reader.Reader;
+import java.time.Year;
+import java.util.Calendar;
+import java.util.Date;
 
 public class Program {
     public static void main (String[] args) {
-        Reader reader = new Reader("Vlad", "Shichko",
-                2001, "vandl3511@gmail.com", "+375297729144");
-        System.out.println(reader);
+        System.out.println(Year.now().getValue());
     }
 }
