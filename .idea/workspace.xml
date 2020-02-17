@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fc66ac8-f6a2-4bf2-8680-ad84b6335614" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Book/Author.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Book/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Book/Country.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Book/Gender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Book/Publisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Book/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Book/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Book/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Book/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Book/Publisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Book/Publisher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Reader/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Reader/Reader.java" afterDir="false" />
     </list>
@@ -43,7 +42,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RunManager" selected="Application.Program">
     <configuration name="A" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -94,7 +93,9 @@
       <option name="presentableId" value="Default" />
       <updated>1581794993380</updated>
       <workItem from="1581795000195" duration="4168000" />
-      <workItem from="1581840724020" duration="9630000" />
+      <workItem from="1581840724020" duration="10043000" />
+      <workItem from="1581884621163" duration="76000" />
+      <workItem from="1581936817052" duration="3540000" />
     </task>
     <task id="LOCAL-00001" summary="create Program.java">
       <created>1581840804399</created>
@@ -117,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581843225410</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="create Book package">
+      <created>1581851148958</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1581851148958</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,49 +134,50 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create Program.java" />
     <MESSAGE value="create Reader.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="create Reader.java" />
+    <MESSAGE value="create Book package" />
+    <option name="LAST_COMMIT_MESSAGE" value="create Book package" />
   </component>
   <component name="WindowStateProjectService">
     <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1581849530519">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1581849530519" />
-    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1581843224488">
+    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1581940550254">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1581843224488" />
+    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1581940550254" />
     <state x="548" y="154" key="FileChooserDialogImpl" timestamp="1581842478786">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1581842478786" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1581851102863">
+    <state width="996" height="210" key="GridCell.Tab.0.bottom" timestamp="1581940550296">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581851102863" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1581851102863">
+    <state width="996" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581940550296" />
+    <state width="996" height="210" key="GridCell.Tab.0.center" timestamp="1581940550296">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1581851102863" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1581851102863">
+    <state width="996" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1581940550296" />
+    <state width="996" height="210" key="GridCell.Tab.0.left" timestamp="1581940550295">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1581851102863" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1581851102863">
+    <state width="996" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1581940550295" />
+    <state width="996" height="210" key="GridCell.Tab.0.right" timestamp="1581940550296">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1581851102863" />
-    <state x="277" y="0" key="SettingsEditor" timestamp="1581843645653">
+    <state width="996" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1581940550296" />
+    <state x="277" y="0" key="SettingsEditor" timestamp="1581938443321">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1581843645653" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1581843233755">
+    <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1581938443321" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1581851151672">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1581843233755" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1581840724360">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1581851151672" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1581936818304">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1581840724360" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1581936818304" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1581847937700">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
