@@ -1,2 +1,2 @@
-# Programmer's-Library
-Web application "Programmer's Library" on Java
+# Programmer's-com.ShichkoVlad.Library
+Web application "Programmer's com.ShichkoVlad.Library" on Java

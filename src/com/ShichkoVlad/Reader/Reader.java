@@ -1,6 +1,6 @@
-package Reader;
+package com.ShichkoVlad.Reader;
 
-import Book.Book;
+import com.ShichkoVlad.Book.Book;
 import lombok.*;
 import java.io.Serializable;
 import java.time.Year;
@@ -13,14 +13,16 @@ public class Reader implements Serializable {
     private Year birthYear;
     private String email;
     private String phone;
+    private byte[] photo;
     private Book book;
 
-    //Конструктор без Book
-    public Reader(String firstName, String secondName, Year birthYear, String email, String phone) {
+    //Конструктор без com.ShichkoVlad.Book
+    public Reader(String firstName, String secondName, Year birthYear, String email, String phone, byte[] photo) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.birthYear = birthYear;
         this.email = email;
         this.phone = phone;
+        this.photo = photo;
     }
 }

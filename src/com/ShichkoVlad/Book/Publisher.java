@@ -1,4 +1,4 @@
-package Book;
+package com.ShichkoVlad.Book;
 
 import lombok.*;
 
