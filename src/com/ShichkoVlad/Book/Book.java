@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.time.Year;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Optional;
 
 @Data
 @AllArgsConstructor
@@ -17,12 +18,13 @@ public class Book {
     private Year year;
     private Publisher publisher;
     private Calendar publishingDate;
-    private int copiesAmount;
+    private Optional<Integer> copiesAmount;
     private List<Author> authors;
     private List<byte[]> photos;
     @Override
     public String toString() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("d.M.YYYY");
+
         return "com.ShichkoVlad.Book{" +
                 "name='" + name + '\'' +
                 ", year=" + year +
