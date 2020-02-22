@@ -14,6 +14,7 @@ import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -82,10 +83,10 @@ public class BookManager {
     }
 
     //Методы поиска книг по различным параметрам
-    public List<Book> find(Predicate<Book> bookPredicate) throws NoSuchBookException{
-        List<Book> books = library.books.stream()
+    public Set<Book> find(Predicate<Book> bookPredicate) throws NoSuchBookException{
+        Set<Book> books = library.books.stream()
                 .filter(bookPredicate)
-                .collect(Collectors.toList());
+                .collect(Collectors.toSet());
         if (books.size() > 0) {
             return books;
         }
@@ -94,16 +95,16 @@ public class BookManager {
         }
     }
 
-    public List<Book> findByBookName(String title) throws NoSuchBookException {
+    public Set<Book> findByBookName(String title) throws NoSuchBookException {
         return find(book -> book.getName().equals(title));
     }
 
-    public List<Book> findByYear(Year begin, Year end) throws NoSuchBookException {
+    public Set<Book> findByYear(Year begin, Year end) throws NoSuchBookException {
         return find(book -> book.getYear().getValue() >= begin.getValue() &&
                             book.getYear().getValue() <= end.getValue());
     }
 
-    public List<Book> findByAuthorName(String authorName) throws NoSuchBookException {
+    public Set<Book> findByAuthorName(String authorName) throws NoSuchBookException {
         return find(book -> book.getAuthors().stream().anyMatch(author -> authorName.contains(author.getFirstName()) &&
                 authorName.contains(author.getSecondName())));
     }

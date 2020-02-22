@@ -35,7 +35,7 @@ public class Program {
 
         try {
             Reader reader = new Reader("Vlad", "Shichko", "vandl3511@gmail.com");
-            bookManager.giveBookToReader(library.getBooks().get(0), reader);
+            bookManager.giveBookToReader((Book)library.getBooks().toArray()[0], reader);
             readerManager.addNewReader(reader);
         }
         catch (ReaderAlreadyHasBookException | NoSuchBookException | NoSuchReaderException e) {

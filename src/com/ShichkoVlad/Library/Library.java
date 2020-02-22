@@ -4,25 +4,23 @@ import com.ShichkoVlad.Book.Book;
 import com.ShichkoVlad.Reader.Reader;
 import lombok.Data;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 @Data
 public class Library {
-    List<Reader> readers;
-    List<Book> books;
+    Set<Reader> readers;
+    Set<Book> books;
 
     public Library () {
-        readers = new ArrayList<>();
-        books = new ArrayList<>();
+        readers = new HashSet<>();
+        books = new HashSet<>();
     }
 
     //геттеры возвращают немодифицируемые списки во избежание изменения списков извне пакета через геттер
-    public List<Reader> getReaders() {
-        return Collections.unmodifiableList(readers);
+    public Set<Reader> getReaders() {
+        return Collections.unmodifiableSet(readers);
     }
-    public List<Book> getBooks() {
-        return Collections.unmodifiableList(books);
+    public Set<Book> getBooks() {
+        return Collections.unmodifiableSet(books);
     }
 }
