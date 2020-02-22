@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.time.Year;
 import java.util.*;
@@ -11,7 +12,7 @@ import java.util.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Book {
+public class Book implements Serializable {
     private String name;
     private Year year;
     private Publisher publisher;

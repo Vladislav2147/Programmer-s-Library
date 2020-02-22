@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fc66ac8-f6a2-4bf2-8680-ad84b6335614" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readers.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Book/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ShichkoVlad/Book/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Book/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ShichkoVlad/Book/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Book/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ShichkoVlad/Book/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Book/Gender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ShichkoVlad/Book/Gender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Book/Publisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ShichkoVlad/Book/Publisher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Library/BookManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ShichkoVlad/Library/BookManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Library/ReaderManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ShichkoVlad/Library/ReaderManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ShichkoVlad/Program.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,10 +65,16 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="set_collections" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IgnoredFileRootStore">
@@ -87,7 +101,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RunManager" selected="Application.Program (1)">
     <configuration name="A" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -134,8 +148,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Program (1)" />
-        <item itemvalue="Application.Program" />
         <item itemvalue="Application.Two" />
+        <item itemvalue="Application.Program" />
         <item itemvalue="Application.a" />
         <item itemvalue="Application.A" />
       </list>
@@ -275,6 +289,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1581973364846" />
+    <state x="526" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582394848229">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="526" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1582394848229" />
     <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1582309139159">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -291,22 +309,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582217525335" />
-    <state width="1493" height="143" key="GridCell.Tab.0.bottom" timestamp="1582372834889">
+    <state width="1493" height="143" key="GridCell.Tab.0.bottom" timestamp="1582394948232">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582372834889" />
-    <state width="1493" height="143" key="GridCell.Tab.0.center" timestamp="1582372834888">
+    <state width="1493" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582394948232" />
+    <state width="1493" height="143" key="GridCell.Tab.0.center" timestamp="1582394948232">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582372834888" />
-    <state width="1493" height="143" key="GridCell.Tab.0.left" timestamp="1582372834887">
+    <state width="1493" height="143" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582394948232" />
+    <state width="1493" height="143" key="GridCell.Tab.0.left" timestamp="1582394948231">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582372834887" />
-    <state width="1493" height="143" key="GridCell.Tab.0.right" timestamp="1582372834888">
+    <state width="1493" height="143" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582394948231" />
+    <state width="1493" height="143" key="GridCell.Tab.0.right" timestamp="1582394948232">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582372834888" />
+    <state width="1493" height="143" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582394948232" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1582372570710">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -331,10 +349,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="560" y="134" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1582119089007" />
-    <state x="277" y="0" key="SettingsEditor" timestamp="1582224325661">
+    <state x="277" y="0" key="SettingsEditor" timestamp="1582394486660">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1582224325661" />
+    <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1582394486660" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1582372405728">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

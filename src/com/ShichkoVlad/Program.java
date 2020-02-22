@@ -14,27 +14,17 @@ public class Program {
     public static void main (String[] args) {
         Library library = new Library();
         BookManager bookManager = new BookManager(library);
-        bookManager.addNewBook(new Book("Title", Year.of(2001)));
-        bookManager.addNewBook(new Book("book", Year.of(2005)));
-
+        bookManager.addNewBook(new Book("The first book", Year.of(1997)));
+        bookManager.addNewBook(new Book("The second book", Year.of(1999)));
+        bookManager.writeListToFile("books.bin");
         ReaderManager readerManager = new ReaderManager(library);
         readerManager.addNewReader(new Reader("Vlad", "Shichko", "vandl3511@gmail.com"));
         readerManager.addNewReader(new Reader("Name", "Surname", "noname@gmail.com"));
-
+        readerManager.writeListToFile("readers.bin");
         for(Book book: library.getBooks()) {
             System.out.println(book);
         }
 
-        try {
-            bookManager.giveBookToReader(library.getBooks().get(0), library.getReaders().get(1));
-        }
-        catch (ReaderAlreadyHasBookException | NoSuchBookException | NoSuchReaderException e) {
-            System.out.println(e.getMessage());
-        }
-
-        for(Reader reader: library.getReaders()) {
-            System.out.println(reader);
-        }
 
 
 
