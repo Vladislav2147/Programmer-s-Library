@@ -16,7 +16,7 @@ public class Reader implements Serializable {
     private String email;
     private String phone;
     private byte[] photo;
-    private Optional<Book> book = Optional.empty();
+    private transient Optional<Book> book = Optional.empty(); //TODO убрать transient в будущем
 
     //Конструктор обязательных полей
     public Reader(String firstName, String secondName, String email) {
