@@ -6,11 +6,16 @@ import com.ShichkoVlad.Book.Book;
 import com.ShichkoVlad.Exceptions.*;
 import com.ShichkoVlad.Library.*;
 import com.ShichkoVlad.Reader.Reader;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 import java.time.Year;
 
 public class Program {
     public static void main (String[] args) {
+
+        PropertyConfigurator.configure("resources/log4j.properties");
+        Logger logger = Logger.getLogger(Program.class);
 
         Library library = new Library();
 
@@ -46,6 +51,7 @@ public class Program {
         }
         catch (NoSuchBookException e) {
             System.out.println(e.getMessage());
+            logger.error(e);
         }
 
         try {
@@ -62,6 +68,7 @@ public class Program {
         }
         catch (NoSuchReaderException | NoSuchBookException | ReaderAlreadyHasBookException e) {
             System.out.println(e.getMessage());
+            logger.error(e);
         }
 
         try {
@@ -81,6 +88,7 @@ public class Program {
         }
         catch (NoSuchReaderException | NoSuchBookException e) {
             System.out.println(e.getMessage());
+            logger.error(e);
         }
 
     }
