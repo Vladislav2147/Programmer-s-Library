@@ -5,13 +5,11 @@ import com.ShichkoVlad.Book.Book;
 import com.ShichkoVlad.Exceptions.NoSuchBookException;
 import com.ShichkoVlad.Exceptions.NoSuchReaderException;
 import com.ShichkoVlad.Exceptions.ReaderAlreadyHasBookException;
-import com.ShichkoVlad.Program;
 import com.ShichkoVlad.Reader.Reader;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.time.Year;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
@@ -22,8 +20,12 @@ import java.util.stream.Collectors;
 public class BookManager {
     Library library;
 
-    public void addNewBook(Book book) {
-        library.books.add(book);
+    public boolean addNewBook(Book book) {
+        if(!library.books.contains(book)) {
+            library.books.add(book);
+            return true;
+        }
+        return false;
     }
 
     public void changeBook(Book book) throws NoSuchBookException{

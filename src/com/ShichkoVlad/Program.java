@@ -1,5 +1,4 @@
 //TODO
-// Защита на добавление в коллекцю по equals
 // файлы
 // логгер
 package com.ShichkoVlad;
@@ -27,9 +26,7 @@ public class Program {
         }
 
         try {
-            Reader reader = new Reader("Vlad", "Shichko", "vandl3511@gmail.com");
-            bookManager.giveBookToReader(library.getBooks().get(0), reader);
-            readerManager.addNewReader(reader);
+            bookManager.giveBookToReader(library.getBooks().get(0), library.getReaders().get(1));
         }
         catch (ReaderAlreadyHasBookException | NoSuchBookException | NoSuchReaderException e) {
             System.out.println(e.getMessage());
