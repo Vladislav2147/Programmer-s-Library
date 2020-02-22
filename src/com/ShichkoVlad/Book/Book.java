@@ -6,9 +6,7 @@ import lombok.NoArgsConstructor;
 
 import java.text.SimpleDateFormat;
 import java.time.Year;
-import java.util.Calendar;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Data
 @AllArgsConstructor
@@ -18,20 +16,13 @@ public class Book {
     private Year year;
     private Publisher publisher;
     private Calendar publishingDate;
-    private Optional<Integer> copiesAmount;
-    private List<Author> authors;
-    private List<byte[]> photos;
-    @Override
-    public String toString() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("d.M.YYYY");
+    private Integer copiesAmount;
+    private List<Author> authors = new ArrayList<>();
+    private List<byte[]> photos = new ArrayList<>();
 
-        return "com.ShichkoVlad.Book{" +
-                "name='" + name + '\'' +
-                ", year=" + year +
-                ", publisher=" + publisher +
-                ", publishingDate=" + dateFormat.format(publishingDate.getTime()) +
-                ", copiesAmount=" + copiesAmount +
-                ", authors=" + authors +
-                '}';
+    //Конструктор обязательных полей
+    public Book(String name, Year year) {
+        this.name = name;
+        this.year = year;
     }
 }

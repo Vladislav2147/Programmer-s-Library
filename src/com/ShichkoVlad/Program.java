@@ -1,8 +1,4 @@
 //TODO
-// Передавать в метод поиска предикат, по которому осуществляется поиск (или нет)
-// Нормальные конструкторы для минимального набора параметров + проверка на null обязательных
-// доделать функционал менеджеров
-// Сделать все не необходимые поля optional
 // файлы
 // логгер
 package com.ShichkoVlad;
@@ -10,28 +6,47 @@ package com.ShichkoVlad;
 import com.ShichkoVlad.Book.Author;
 import com.ShichkoVlad.Book.Book;
 import com.ShichkoVlad.Exceptions.NoSuchBookException;
+import com.ShichkoVlad.Exceptions.NoSuchReaderException;
+import com.ShichkoVlad.Exceptions.ReaderAlreadyHasBookException;
 import com.ShichkoVlad.Library.BookManager;
 import com.ShichkoVlad.Library.Library;
+import com.ShichkoVlad.Library.ReaderManager;
+import com.ShichkoVlad.Reader.Reader;
 
 import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Program {
     public static void main (String[] args) {
         Library library = new Library();
         BookManager bookManager = new BookManager(library);
-        List<Author> authors = new ArrayList<>();
-        //authors.add(new Author("vladec", "shichko", null, null,null));
-        bookManager.addNewBook(new Book("name", Year.of(2001), null, null, null, null , null));
-        bookManager.addNewBook(new Book("noname", Year.of(2005), null, null, null, null, null));
-        System.out.println(bookManager.getLibrary().getBooks().size());
-        try {
-            bookManager.removeBook(bookManager.getLibrary().getBooks().get(0));
+        bookManager.addNewBook(new Book("Title", Year.of(2001)));
+        bookManager.addNewBook(new Book("book", Year.of(2005)));
+
+        ReaderManager readerManager = new ReaderManager(library);
+        readerManager.addNewReader(new Reader("Vlad", "Shichko", "vandl3511@gmail.com"));
+        readerManager.addNewReader(new Reader("Name", "Surname", "noname@gmail.com"));
+
+        for(Book book: library.getBooks()) {
+            System.out.println(book);
         }
-        catch (NoSuchBookException e) {
+
+        try {
+            Reader reader = new Reader("Vlad", "Shichko", "vandl3511@gmail.com");
+            bookManager.giveBookToReader(library.getBooks().get(0), reader);
+            readerManager.addNewReader(reader);
+        }
+        catch (ReaderAlreadyHasBookException | NoSuchBookException | NoSuchReaderException e) {
             System.out.println(e.getMessage());
         }
-        System.out.println(bookManager.getLibrary().getBooks().size());
+
+        for(Reader reader: library.getReaders()) {
+            System.out.println(reader);
+        }
+
+
+
     }
 }
