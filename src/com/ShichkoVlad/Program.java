@@ -1,22 +1,15 @@
 //TODO
+// Защита на добавление в коллекцю по equals
 // файлы
 // логгер
 package com.ShichkoVlad;
 
-import com.ShichkoVlad.Book.Author;
 import com.ShichkoVlad.Book.Book;
-import com.ShichkoVlad.Exceptions.NoSuchBookException;
-import com.ShichkoVlad.Exceptions.NoSuchReaderException;
-import com.ShichkoVlad.Exceptions.ReaderAlreadyHasBookException;
-import com.ShichkoVlad.Library.BookManager;
-import com.ShichkoVlad.Library.Library;
-import com.ShichkoVlad.Library.ReaderManager;
+import com.ShichkoVlad.Exceptions.*;
+import com.ShichkoVlad.Library.*;
 import com.ShichkoVlad.Reader.Reader;
 
 import java.time.Year;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 
 public class Program {
     public static void main (String[] args) {

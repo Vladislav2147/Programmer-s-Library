@@ -10,8 +10,12 @@ import lombok.Data;
 public class ReaderManager {
     Library library;
 
-    public void addNewReader(Reader reader) {
-        library.readers.add(reader);
+    public boolean addNewReader(Reader reader) {
+        if(!library.readers.contains(reader)) {
+            library.readers.add(reader);
+            return true;
+        }
+        return false;
     }
     public void changeReader(Reader reader) throws NoSuchReaderException {
         if(library.readers.contains(reader)) {
