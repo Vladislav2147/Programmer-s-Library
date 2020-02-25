@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fc66ac8-f6a2-4bf2-8680-ad84b6335614" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/log4j_1_2_17.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/books.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readers.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jackson_annotations_2_10_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jackson_datatype_jsr310_2_10_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ShichkoVlad/LibrarySerializaton/LibraryJsonSerializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ShichkoVlad/LibrarySerializaton/LocalDate/LocalDateDeserializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ShichkoVlad/LibrarySerializaton/LocalDate/LocalDateSerializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Library.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Library/BookManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ShichkoVlad/Library/BookManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Library/ReaderManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ShichkoVlad/Library/ReaderManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Book/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ShichkoVlad/Book/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ShichkoVlad/Program.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,16 +62,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
         <option value="XML Properties File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="set_collections" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -96,7 +96,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../log4j-1.2.17.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jackson-datatype-jsr310-2.10.2.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -186,7 +186,10 @@
       <workItem from="1582300768136" duration="9008000" />
       <workItem from="1582314897172" duration="25000" />
       <workItem from="1582366573673" duration="3611000" />
-      <workItem from="1582401644210" duration="3617000" />
+      <workItem from="1582401644210" duration="3839000" />
+      <workItem from="1582441534373" duration="34000" />
+      <workItem from="1582554775219" duration="5689000" />
+      <workItem from="1582577588479" duration="207000" />
     </task>
     <task id="LOCAL-00001" summary="create Program.java">
       <created>1581840804399</created>
@@ -265,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582401567964</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="FIRST TASK FINAL VERSION">
+      <created>1582405448721</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1582405448721</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +308,8 @@
     <MESSAGE value="fixed adding same Reader.java to library" />
     <MESSAGE value="added writing and getting collections from file" />
     <MESSAGE value="finished files" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished files" />
+    <MESSAGE value="FIRST TASK FINAL VERSION" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIRST TASK FINAL VERSION" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581973364846">
@@ -309,38 +320,42 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="526" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1582397686859" />
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1582395461248">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1582561297419">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1582395461248" />
-    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1582401566949">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1582561297419" />
+    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1582405447739">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1582401566949" />
+    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1582405447739" />
+    <state x="551" y="128" key="DetectedRootsChooserDialog" timestamp="1582558163758">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="551" y="128" key="DetectedRootsChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1582558163758" />
     <state x="147" y="65" key="DiffContextDialog" timestamp="1582119087705">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="147" y="65" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1582119087705" />
-    <state x="548" y="154" key="FileChooserDialogImpl" timestamp="1582402320510">
+    <state x="548" y="154" key="FileChooserDialogImpl" timestamp="1582558484492">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="548" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582402320510" />
-    <state width="1493" height="143" key="GridCell.Tab.0.bottom" timestamp="1582405285018">
+    <state x="548" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582558484492" />
+    <state width="1493" height="143" key="GridCell.Tab.0.bottom" timestamp="1582562250779">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582405285018" />
-    <state width="1493" height="143" key="GridCell.Tab.0.center" timestamp="1582405285018">
+    <state width="1493" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582562250779" />
+    <state width="1493" height="143" key="GridCell.Tab.0.center" timestamp="1582562250778">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582405285018" />
-    <state width="1493" height="143" key="GridCell.Tab.0.left" timestamp="1582405285017">
+    <state width="1493" height="143" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582562250778" />
+    <state width="1493" height="143" key="GridCell.Tab.0.left" timestamp="1582562250778">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582405285017" />
-    <state width="1493" height="143" key="GridCell.Tab.0.right" timestamp="1582405285018">
+    <state width="1493" height="143" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582562250778" />
+    <state width="1493" height="143" key="GridCell.Tab.0.right" timestamp="1582562250778">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582405285018" />
+    <state width="1493" height="143" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582562250778" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1582401594200">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -365,18 +380,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="560" y="134" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1582119089007" />
-    <state x="277" y="0" key="SettingsEditor" timestamp="1582402382702">
+    <state x="277" y="0" key="SettingsEditor" timestamp="1582558490290">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1582402382702" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1582401573639">
+    <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1582558490290" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1582405451506">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1582401573639" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1582401644336">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1582405451506" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1582647795788">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1582401644336" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1582647795788" />
     <state x="330" y="148" width="876" height="601" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1582367102250">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -385,9 +400,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="209" y="33" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1581952889538" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1581847937700">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1582558746041">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1581847937700" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1582558746041" />
   </component>
 </project>

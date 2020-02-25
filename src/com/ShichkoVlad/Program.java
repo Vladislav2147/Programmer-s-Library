@@ -1,15 +1,22 @@
-//TODO
-// логгер
 package com.ShichkoVlad;
 
-import com.ShichkoVlad.Book.Book;
+import com.ShichkoVlad.Book.*;
 import com.ShichkoVlad.Exceptions.*;
 import com.ShichkoVlad.Library.*;
 import com.ShichkoVlad.Reader.Reader;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+import java.io.File;
+import java.io.IOException;
+import java.time.LocalDate;
 import java.time.Year;
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+import java.util.List;
 
 public class Program {
     public static void main (String[] args) {
@@ -17,79 +24,32 @@ public class Program {
         PropertyConfigurator.configure("resources/log4j.properties");
         Logger logger = Logger.getLogger(Program.class);
 
+        Publisher publisher = new Publisher("Publisher", Country.Belarus,
+                "Minsk, lenina 15", "220000", "belstu@belstu.by");
+        Author author = new Author("Ivan", "Ivanov", Year.of(1972), Gender.Male, null);
+        Author author2 = new Author("Elithabeth", "Ivanova", Year.of(1965), Gender.Female, null);
+        List<Author> authors  = new ArrayList<>();
+        authors.add(author);
+        authors.add(author2);
+        Book book1 = new Book("First Book", Year.of(1995), publisher,
+                LocalDate.of(1995, 05, 21), 5000, authors, null);
+        Book book2 = new Book("second Book", Year.of(2000));
+
+        Reader reader1 = new Reader("Ivan", "Van", "email@gmail.com");
+        Reader reader2 = new Reader("Reader", "Readerov", "someemail@mail.ru");
+
         Library library = new Library();
 
+        ReaderManager readerManager = new ReaderManager(library);
         BookManager bookManager = new BookManager(library);
 
-        //bookManager.addNewBook(new Book("The first book", Year.of(1997)));
-        //bookManager.addNewBook(new Book("The second book", Year.of(1999)));
+        readerManager.addNewReader(reader1);
+        readerManager.addNewReader(reader2);
+        bookManager.addNewBook(book1);
+        bookManager.addNewBook(book2);
 
-        //bookManager.writeListToFile("books.bin");
-        bookManager.getListFromFile("books.bin");
 
-        System.out.println("\nСписок книг, полученный из файла:");
-        for(Book book: library.getBooks()) {
-            System.out.println(book);
-        }
 
-        ReaderManager readerManager = new ReaderManager(library);
-
-        //readerManager.addNewReader(new Reader("Vlad", "Shichko", "vandl3511@gmail.com"));
-        //readerManager.addNewReader(new Reader("Name", "Surname", "noname@gmail.com"));
-
-        //readerManager.writeListToFile("readers.bin");
-        readerManager.getListFromFile("readers.bin");
-
-        System.out.println("\nСписок читателей, полученный из файла:");
-        for(Reader reader: library.getReaders()) {
-            System.out.println(reader);
-        }
-
-        try {
-            System.out.println("\nКнига с названием \"The first book\":");
-            System.out.println(bookManager.findByBookName("The first book"));
-        }
-        catch (NoSuchBookException e) {
-            System.out.println(e.getMessage());
-            logger.error(e);
-        }
-
-        try {
-            Reader myReader = readerManager.findByEmail("vandl3511@gmail.com");
-            Book myBook = library.getBooks().get(0);
-            bookManager.giveBookToReader(myBook, myReader);
-
-            System.out.println("\nВыдали читателю книгу: ");
-            System.out.println(myReader);
-
-            System.out.println("\nПытаемся выдать ту же книгу другому читателю -> получаем исключение: ");
-            bookManager.giveBookToReader(myBook, library.getReaders().get(1));
-
-        }
-        catch (NoSuchReaderException | NoSuchBookException | ReaderAlreadyHasBookException e) {
-            System.out.println(e.getMessage());
-            logger.error(e);
-        }
-
-        try {
-            System.out.println("\nВозвращаем книгу:");
-
-            Reader myReader = readerManager.findByEmail("vandl3511@gmail.com");
-            bookManager.takeBookFromReader(myReader);
-
-            System.out.println("Книга: " + myReader.getBook());
-
-            System.out.println("\nУдаляем читателя и выводим список читателей: ");
-            readerManager.removeReader(myReader);
-
-            for(Reader reader: library.getReaders()) {
-                System.out.println(reader);
-            }
-        }
-        catch (NoSuchReaderException | NoSuchBookException e) {
-            System.out.println(e.getMessage());
-            logger.error(e);
-        }
 
     }
 }
