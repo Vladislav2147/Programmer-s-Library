@@ -1,5 +1,6 @@
 package com.ShichkoVlad.Library;
 
+import com.ShichkoVlad.Book.Author;
 import com.ShichkoVlad.Book.Book;
 import com.ShichkoVlad.Exceptions.NoSuchBookException;
 import com.ShichkoVlad.Exceptions.NoSuchReaderException;
@@ -7,7 +8,6 @@ import com.ShichkoVlad.Exceptions.ReaderAlreadyHasBookException;
 import com.ShichkoVlad.Reader.Reader;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.apache.log4j.Logger;
 
 import java.io.*;
 import java.time.Year;
@@ -20,18 +20,14 @@ import java.util.stream.Collectors;
 @Data
 public class BookManager {
 
-    final static Logger logger = Logger.getLogger(BookManager.class);
-
     Library library;
 
     public boolean addNewBook(Book book) {
 
         if(!library.books.contains(book)) {
             library.books.add(book);
-            logger.info("new book '" + book.getName() + "' was added");
             return true;
         }
-        logger.info("new book '" + book.getName() + "' weren't added");
         return false;
 
     }
@@ -40,7 +36,6 @@ public class BookManager {
 
         if (library.books.contains(book)) {
             book.setName("new name"); //TODO исправить на поздних стадиях
-            logger.info("book '" + book.getName() + "' was changed");
         }
         else {
             throw new NoSuchBookException("There is no book");
@@ -52,7 +47,6 @@ public class BookManager {
 
         if (library.books.contains(book)) {
             library.books.remove(book);
-            logger.info("book '" + book.getName() + "' was removed'");
         }
         else {
             throw new NoSuchBookException("There is no book");
@@ -74,7 +68,6 @@ public class BookManager {
         if (library.readers.stream().noneMatch(reader1 -> reader1.getBook().orElse(new Book()).equals(book))) {
             if (reader.getBook().isEmpty()) {
                 reader.setBook(Optional.of(book));
-                logger.info("book '" + book.getName() +"' was given to reader '" + reader.getEmail() + "'");
             }
             else {
                 throw new ReaderAlreadyHasBookException("this reader already has a book");
@@ -94,9 +87,7 @@ public class BookManager {
         }
 
         if (reader.getBook().isPresent()) {
-            String bookName = reader.getBook().get().getName();
             reader.setBook(Optional.empty());
-            logger.info("book '" + bookName +"' was returned by reader '" + reader.getEmail() + "'");
         }
         else {
             throw new NoSuchBookException("Reader hasn't a book");
@@ -147,11 +138,9 @@ public class BookManager {
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
                 objectOutputStream.writeObject(library.books);
                 flag = true;
-                logger.info("books were written to the file");
             }
         } catch (IOException e) {
             e.printStackTrace();
-            logger.error(e);
         }
         return flag;
     }
@@ -161,12 +150,10 @@ public class BookManager {
         try ( FileInputStream fis = new FileInputStream(f)){
             ObjectInputStream inputStream = new ObjectInputStream(fis);
             library.books = (List<Book>) inputStream.readObject();
-            logger.info("books were received from the file");
             return true;
         }
         catch ( IOException | ClassNotFoundException e) {
             e.printStackTrace();
-            logger.error(e);
         }
         return false;
     }
