@@ -1,35 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cafc51a7-54af-4640-bf3b-917ce00e76c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_microsoft_sqlserver_mssql_jdbc_8_2_0_jre13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lombok_1_18_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="cafc51a7-54af-4640-bf3b-917ce00e76c7" name="Default Changelist" comment="added maven">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_6_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_19.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_microsoft_sqlserver_mssql_jdbc_8_2_0_jre13.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Book/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/Book/Author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Book/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/Book/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Book/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/Book/Country.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Book/Gender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/Book/Gender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Book/Publisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/Book/Publisher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Exceptions/NoSuchBookException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/Exceptions/NoSuchBookException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Exceptions/NoSuchReaderException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/Exceptions/NoSuchReaderException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Exceptions/ReaderAlreadyHasBookException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/Exceptions/ReaderAlreadyHasBookException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Library/BookManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/Library/BookManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Library/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/Library/Library.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Library/ReaderManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/Library/ReaderManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ShichkoVlad/Reader/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/Reader/Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/Program.java" afterDir="false" />
     </list>
     <list id="54489d80-80b0-4d4f-b54f-558115bac925" name="Revert &quot;FIRST TASK FINAL VERSION&quot;" comment="Revert &quot;FIRST TASK FINAL VERSION&quot;&#10;&#10;This reverts commit 53216c7d">
       <change beforePath="$PROJECT_DIR$/.idea/libraries/log4j_1_2_17.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Library.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Library.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/readers.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/log4j.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +32,23 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Library@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Library@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Library@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="library: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="ErrorTreeViewConfiguration">
@@ -67,7 +67,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="set_collections" />
+        <entry key="$PROJECT_DIR$" value="4b782c97a6b3f5f46dbbd043c2305f032baed579" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -94,7 +94,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="sqlserver" />
+    <property name="DatabaseDriversLRU" value="sqlserver&#10;mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -189,7 +189,10 @@
       <workItem from="1582300768136" duration="9008000" />
       <workItem from="1582314897172" duration="25000" />
       <workItem from="1582366573673" duration="3611000" />
-      <workItem from="1582735819105" duration="2739000" />
+      <workItem from="1582735819105" duration="3052000" />
+      <workItem from="1582792287277" duration="865000" />
+      <workItem from="1582834621802" duration="1889000" />
+      <workItem from="1582872028018" duration="3588000" />
     </task>
     <task id="LOCAL-00001" summary="create Program.java">
       <created>1581840804399</created>
@@ -261,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582395329483</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added maven">
+      <created>1582753987521</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1582753987521</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +303,8 @@
     <MESSAGE value="finished managers" />
     <MESSAGE value="fixed adding same Reader.java to library" />
     <MESSAGE value="added writing and getting collections from file" />
-    <option name="LAST_COMMIT_MESSAGE" value="added writing and getting collections from file" />
+    <MESSAGE value="added maven" />
+    <option name="LAST_COMMIT_MESSAGE" value="added maven" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Inspections" timestamp="1582736248451">
@@ -304,10 +315,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1582753775240" />
-    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581973364846">
+    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582876169583">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1581973364846" />
+    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1582876169583" />
     <state x="526" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582397686859">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -320,10 +331,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="400" y="101" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1536.824@0.0.1536.824" timestamp="1582736195587" />
-    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1582395328331">
+    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1582754068301">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1582395328331" />
+    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1582754068301" />
     <state x="147" y="65" key="DiffContextDialog" timestamp="1582119087705">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -332,22 +343,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582217525335" />
-    <state width="1493" height="143" key="GridCell.Tab.0.bottom" timestamp="1582736883101">
+    <state width="1493" height="143" key="GridCell.Tab.0.bottom" timestamp="1582877959818">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582736883101" />
-    <state width="1493" height="143" key="GridCell.Tab.0.center" timestamp="1582736883100">
+    <state width="1493" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582877959818" />
+    <state width="1493" height="143" key="GridCell.Tab.0.center" timestamp="1582877959817">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582736883100" />
-    <state width="1493" height="143" key="GridCell.Tab.0.left" timestamp="1582736883100">
+    <state width="1493" height="143" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582877959817" />
+    <state width="1493" height="143" key="GridCell.Tab.0.left" timestamp="1582877959817">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582736883100" />
-    <state width="1493" height="143" key="GridCell.Tab.0.right" timestamp="1582736883101">
+    <state width="1493" height="143" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582877959817" />
+    <state width="1493" height="143" key="GridCell.Tab.0.right" timestamp="1582877959818">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582736883101" />
+    <state width="1493" height="143" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582877959818" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1582372570710">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -376,14 +387,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1582736443817" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1582372405728">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1582754093596">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1582372405728" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1582735820972">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1582754093596" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1582872047232">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1582735820972" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1582872047232" />
     <state x="330" y="148" width="876" height="601" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1582367102250">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
