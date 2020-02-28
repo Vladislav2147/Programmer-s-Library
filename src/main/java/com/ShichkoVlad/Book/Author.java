@@ -10,6 +10,7 @@ import java.time.Year;
 @AllArgsConstructor
 @Data
 public class Author implements Serializable {
+    private int id;
     private String firstName;
     private String secondName;
     private Year birthYear;

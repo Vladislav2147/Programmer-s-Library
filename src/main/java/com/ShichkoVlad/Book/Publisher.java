@@ -8,6 +8,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Publisher implements Serializable {
+    private int id;
     private String name;
     private Country country;
     private String address;

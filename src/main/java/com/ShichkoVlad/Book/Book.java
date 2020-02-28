@@ -13,6 +13,7 @@ import java.util.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Book implements Serializable {
+    private int id;
     private String name;
     private Year year;
     private Publisher publisher;
@@ -22,7 +23,8 @@ public class Book implements Serializable {
     private List<byte[]> photos = new ArrayList<>();
 
     //Конструктор обязательных полей
-    public Book(String name, Year year) {
+    public Book(int id, String name, Year year) {
+        this.id = id;
         this.name = name;
         this.year = year;
     }

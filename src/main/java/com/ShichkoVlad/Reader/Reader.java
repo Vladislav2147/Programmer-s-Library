@@ -10,6 +10,7 @@ import java.util.Optional;
 @Data
 @NoArgsConstructor
 public class Reader implements Serializable {
+    int id;
     private String firstName;
     private String secondName;
     private Year birthYear;
@@ -19,7 +20,8 @@ public class Reader implements Serializable {
     private transient Optional<Book> book = Optional.empty(); //TODO убрать transient в будущем
 
     //Конструктор обязательных полей
-    public Reader(String firstName, String secondName, String email) {
+    public Reader(int id, String firstName, String secondName, String email) {
+        this.id = id;
         this.firstName = firstName;
         this.secondName = secondName;
         this.email = email;
