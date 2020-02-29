@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class DatabasePublisherManager implements ISqlable<Publisher> {
+public class PublisherTableManager implements ITableManagable<Publisher> {
 
     static String tableName = "publishers";
 
@@ -39,18 +39,19 @@ public class DatabasePublisherManager implements ISqlable<Publisher> {
     @Override
     public void addToTable(Publisher publisher, Connection connection) throws SQLException {
 
-        StringBuilder query = new StringBuilder();
-        query.append("INSERT INTO " + getTableName() + " value (");
-        query.append(publisher.getId() + ",");
-        query.append("'" + publisher.getName() + "',");
-        query.append("'" + publisher.getCountry().toString() + "',");
-        query.append("'" + publisher.getAddress() + "',");
-        query.append("'" + publisher.getPostCode() + "',");
-        query.append("'" + publisher.getEmail() + "');");
+        String query = "INSERT INTO " + getTableName() + " (id, name, country, address, post_code, email) "
+                + "value (?, ?, ?, ?, ?, ?)";
 
-        PreparedStatement statement = connection.prepareStatement(query.toString());
+        PreparedStatement statement = connection.prepareStatement(query);
+
+        statement.setInt(1, publisher.getId());
+        statement.setString(2, publisher.getName());
+        statement.setString(3, publisher.getCountry().toString());
+        statement.setString(4, publisher.getAddress());
+        statement.setString(5, publisher.getPostCode());
+        statement.setString(6, publisher.getEmail());
+
         statement.executeUpdate();
-
     }
 
 }

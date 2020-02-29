@@ -7,19 +7,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public interface ISqlable<T> {
+public interface ITableManagable<T> {
 
     String getTableName();
     T getInstanceById(int id, Connection connection) throws SQLException, AmbiguousFilterException;
     void addToTable(T object, Connection connection) throws SQLException;
 
-    //TODO изменить метод
     //На данном этапе метод changeInTable принимает параметром команду, согласно которой изменяет запись с соотв. id
-    default void changeInTable(int id, String setStatement, Connection connection) throws SQLException, AmbiguousFilterException {
+    default void changeInTable(int id, String columnName, Object newValue, Connection connection) throws SQLException, AmbiguousFilterException {
 
         StringBuilder query = new StringBuilder();
         query.append("UPDATE " + getTableName());
-        query.append(" SET " + setStatement);
+        query.append(" SET " + columnName + "=" + newValue.toString());
         query.append(" WHERE id = " + id);
 
         PreparedStatement preparedStatement = connection.prepareStatement(query.toString());
@@ -65,8 +64,24 @@ public interface ISqlable<T> {
 
     default void removeFromTable(int id, Connection connection) throws SQLException {
 
-        PreparedStatement statement = connection.prepareStatement("DELETE FROM authors WHERE id = " + id + ";");
+        PreparedStatement statement = connection.prepareStatement("DELETE FROM " + getTableName()
+                + " WHERE id = " + id + ";");
         statement.executeUpdate();
+
+    }
+
+    default boolean contains(int id, Connection connection) throws SQLException{
+        PreparedStatement statement =
+                connection.prepareStatement("SELECT * FROM " + getTableName() + " WHERE id = " + id + ";");
+
+        ResultSet resultSet = statement.executeQuery();
+
+        if(resultSet.isLast()) {
+            return false;
+        }
+        else {
+            return true;
+        }
 
     }
 

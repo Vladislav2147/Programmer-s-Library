@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.Year;
 
-public class DatabaseAuthorManager implements ISqlable<Author> {
+public class AuthorTableManager implements ITableManagable<Author> {
 
     static String tableName = "authors";
 
@@ -38,16 +38,18 @@ public class DatabaseAuthorManager implements ISqlable<Author> {
     @Override
     public void addToTable(Author author, Connection connection) throws SQLException {
 
-        StringBuilder query = new StringBuilder();
-        query.append("INSERT INTO " + getTableName() + " value (");
-        query.append(author.getId() + ",");
-        query.append("'" + author.getFirstName() + "',");
-        query.append("'" + author.getSecondName() + "',");
-        query.append(author.getBirthYear().getValue() + ",");
-        query.append("'" + author.getGender().toString() + "',");
-        query.append("'" + author.getNote() + "');");
+        String query = "INSERT INTO " + getTableName() + " (id, first_name, second_name, birth_year, gender, note) "
+                + "value (?, ?, ?, ?, ?, ?)";
 
-        PreparedStatement statement = connection.prepareStatement(query.toString());
+        PreparedStatement statement = connection.prepareStatement(query);
+
+        statement.setInt(1, author.getId());
+        statement.setString(2, author.getFirstName());
+        statement.setString(3, author.getSecondName());
+        statement.setInt(4, author.getBirthYear().getValue());
+        statement.setString(5, author.getGender().toString());
+        statement.setString(6, author.getNote());
+
         statement.executeUpdate();
 
     }

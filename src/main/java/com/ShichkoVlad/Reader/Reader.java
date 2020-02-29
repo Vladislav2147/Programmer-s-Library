@@ -10,7 +10,8 @@ import java.util.Optional;
 @Data
 @NoArgsConstructor
 public class Reader implements Serializable {
-    int id;
+
+    private int id;
     private String firstName;
     private String secondName;
     private Year birthYear;

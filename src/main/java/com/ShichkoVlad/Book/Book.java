@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.Year;
 import java.util.*;
 
@@ -17,7 +18,7 @@ public class Book implements Serializable {
     private String name;
     private Year year;
     private Publisher publisher;
-    private Calendar publishingDate;
+    private LocalDate publishingDate;
     private Integer copiesAmount;
     private List<Author> authors = new ArrayList<>();
     private List<byte[]> photos = new ArrayList<>();
