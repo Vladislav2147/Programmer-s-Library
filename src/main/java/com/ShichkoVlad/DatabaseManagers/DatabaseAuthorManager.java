@@ -52,15 +52,4 @@ public class DatabaseAuthorManager implements ISqlable<Author> {
 
     }
 
-    @Override
-    public void changeInTable(int id, String setStatement, Connection connection) throws SQLException {
-        StringBuilder query = new StringBuilder();
-        query.append("UPDATE " + getTableName());
-        query.append(" SET " + setStatement);
-        query.append(" WHERE id = " + id);
-
-        PreparedStatement preparedStatement = connection.prepareStatement(query.toString());
-        preparedStatement.executeUpdate();
-
-    }
 }

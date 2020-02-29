@@ -15,7 +15,18 @@ public interface ISqlable<T> {
 
     //TODO изменить метод
     //На данном этапе метод changeInTable принимает параметром команду, согласно которой изменяет запись с соотв. id
-    void changeInTable(int id, String setStatement, Connection connection) throws SQLException, AmbiguousFilterException;
+    default void changeInTable(int id, String setStatement, Connection connection) throws SQLException, AmbiguousFilterException {
+
+        StringBuilder query = new StringBuilder();
+        query.append("UPDATE " + getTableName());
+        query.append(" SET " + setStatement);
+        query.append(" WHERE id = " + id);
+
+        PreparedStatement preparedStatement = connection.prepareStatement(query.toString());
+        preparedStatement.executeUpdate();
+
+    }
+
 
     default int getIdByFilter(String filter, Connection connection) throws SQLException, AmbiguousFilterException {
 
@@ -50,6 +61,7 @@ public interface ISqlable<T> {
             throw new AmbiguousFilterException("ambiguous id: " + id);
         }
     }
+
 
     default void removeFromTable(int id, Connection connection) throws SQLException {
 

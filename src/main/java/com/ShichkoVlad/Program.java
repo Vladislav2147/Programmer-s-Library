@@ -5,8 +5,11 @@
 package com.ShichkoVlad;
 
 import com.ShichkoVlad.Book.Author;
+import com.ShichkoVlad.Book.Country;
 import com.ShichkoVlad.Book.Gender;
+import com.ShichkoVlad.Book.Publisher;
 import com.ShichkoVlad.DatabaseManagers.DatabaseAuthorManager;
+import com.ShichkoVlad.DatabaseManagers.DatabasePublisherManager;
 import com.ShichkoVlad.Exceptions.*;
 
 import java.sql.*;
@@ -24,10 +27,12 @@ public class Program {
 
         try(Connection connect = DriverManager.getConnection(url, user, pass)) {
 
-            DatabaseAuthorManager databaseAuthorManager = new DatabaseAuthorManager();
-            Author author = databaseAuthorManager.getInstanceById(2, connect);
-            System.out.println(author);
-            databaseAuthorManager.changeInTable(3, "second_name = 'no author', birth_year = 1990" ,connect);
+            //Publisher publisher = new Publisher(4, "some publisher", Country.Belarus, "8 lenina st., Minsk", "220001", "some@tut.by");
+            DatabasePublisherManager publisherManager = new DatabasePublisherManager();
+            //publisherManager.addToTable(publisher, connect);
+            System.out.println(publisherManager
+                    .getInstanceById(publisherManager.getIdByFilter("name = 'some publisher'", connect), connect));
+            publisherManager.changeInTable(4, "name = 'some_publisher'", connect);
 
         } catch(SQLException | AmbiguousFilterException e) {
 
