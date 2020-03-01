@@ -1,4 +1,4 @@
-package com.ShichkoVlad.DatabaseManagers;
+package com.ShichkoVlad.DatabaseManagers.TableManagers;
 
 import com.ShichkoVlad.Book.Book;
 import com.ShichkoVlad.Book.Publisher;
@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.time.Year;
 import java.util.Optional;
 
-public class BookTableManager implements ITableManagable<Book> {
+public class BookTableManager implements ITableManageable<Book> {
 
     static final String tableName = "books";
 
@@ -60,29 +60,27 @@ public class BookTableManager implements ITableManagable<Book> {
         statement.setInt(1, book.getId());
         statement.setString(2, book.getName());
         statement.setInt(3, book.getYear().getValue());
-        Optional.ofNullable(book.getPublisher()).ifPresent((publisher -> {
-            try {
-                statement.setInt(4, publisher.getId());
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }));
 
-        Optional.ofNullable(book.getPublishingDate()).ifPresent((date -> {
-            try {
-                statement.setDate(5, Date.valueOf(date));
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }));
+        if(book.getPublisher() != null) {
+            statement.setInt(4, book.getPublisher().getId());
+        }
+        else {
+            statement.setObject(4, null);
+        }
 
-        Optional.ofNullable(book.getCopiesAmount()).ifPresent((copies -> {
-            try {
-                statement.setInt(6, copies);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }));
+        if(book.getPublishingDate() != null) {
+            statement.setDate(5, Date.valueOf(book.getPublishingDate()));
+        }
+        else {
+            statement.setObject(5, null);
+        }
+
+        if(book.getPublishingDate() != null) {
+            statement.setInt(6, book.getCopiesAmount());
+        }
+        else {
+            statement.setObject(6, null);
+        }
 
         statement.executeUpdate();
     }

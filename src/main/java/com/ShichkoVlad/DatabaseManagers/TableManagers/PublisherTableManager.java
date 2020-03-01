@@ -1,4 +1,4 @@
-package com.ShichkoVlad.DatabaseManagers;
+package com.ShichkoVlad.DatabaseManagers.TableManagers;
 
 import com.ShichkoVlad.Book.Country;
 import com.ShichkoVlad.Book.Publisher;
@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class PublisherTableManager implements ITableManagable<Publisher> {
+public class PublisherTableManager implements ITableManageable<Publisher> {
 
     static final String tableName = "publishers";
 

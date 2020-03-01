@@ -2,7 +2,7 @@ package com.ShichkoVlad.LibraryManagers;
 
 import com.ShichkoVlad.Book.Author;
 import com.ShichkoVlad.Book.Book;
-import com.ShichkoVlad.DatabaseManagers.*;
+import com.ShichkoVlad.DatabaseManagers.TableManagers.*;
 import com.ShichkoVlad.Exceptions.AmbiguousFilterException;
 import com.ShichkoVlad.Exceptions.NoSuchBookException;
 import com.ShichkoVlad.Exceptions.ReaderAlreadyHasBookException;
@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+//Данный менеджер упрощает работу с базой данных, предоставляя необходимый по заданию функционал
 @AllArgsConstructor
 @Data
 public class BookManager {
@@ -25,8 +26,10 @@ public class BookManager {
 
     public void addNewBook(Book book, Connection connection) throws SQLException {
 
-        PublisherTableManager publisherTableManager = new PublisherTableManager();
-        publisherTableManager.addToTable(book.getPublisher(), connection);
+        if(book.getPublisher() != null) {
+            PublisherTableManager publisherTableManager = new PublisherTableManager();
+            publisherTableManager.addToTable(book.getPublisher(), connection);
+        }
 
         BookTableManager bookTableManager = new BookTableManager();
         bookTableManager.addToTable(book, connection);

@@ -1,6 +1,6 @@
 package com.ShichkoVlad.LibraryManagers;
 
-import com.ShichkoVlad.DatabaseManagers.ReaderTableManager;
+import com.ShichkoVlad.DatabaseManagers.TableManagers.ReaderTableManager;
 import com.ShichkoVlad.Exceptions.AmbiguousFilterException;
 import com.ShichkoVlad.Exceptions.NoSuchReaderException;
 import com.ShichkoVlad.Reader.Reader;
@@ -12,7 +12,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-
+//Данный менеджер упрощает работу с базой данных, предоставляя необходимый по заданию функционал
 @AllArgsConstructor
 @Data
 public class ReaderManager {
@@ -90,7 +90,7 @@ public class ReaderManager {
     }
 
     //Записывает список читателей в базу данных
-    public void writeBooksToDatabase(List<Reader> readers, Connection connection) throws SQLException {
+    public void writeReadersToDatabase(List<Reader> readers, Connection connection) throws SQLException {
 
         ReaderTableManager readerTableManager = new ReaderTableManager();
 

@@ -1,14 +1,13 @@
-package com.ShichkoVlad.DatabaseManagers;
+package com.ShichkoVlad.DatabaseManagers.TableManagers;
 
 import com.ShichkoVlad.Exceptions.AmbiguousFilterException;
 import com.ShichkoVlad.Reader.Reader;
 
-import java.lang.reflect.Type;
 import java.sql.*;
 import java.time.Year;
 import java.util.Optional;
 
-public class ReaderTableManager implements ITableManagable<Reader> {
+public class ReaderTableManager implements ITableManageable<Reader> {
 
     static final String tableName = "readers";
 
@@ -50,31 +49,28 @@ public class ReaderTableManager implements ITableManagable<Reader> {
         statement.setInt(1, reader.getId());
         statement.setString(2, reader.getFirstName());
         statement.setString(3, reader.getSecondName());
-        Optional.ofNullable(reader.getBirthYear()).ifPresent((year -> {
-            try {
-                statement.setInt(4, reader.getBirthYear().getValue());
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }));
+        if(reader.getBirthYear() != null) {
+            statement.setInt(4, reader.getBirthYear().getValue());
+        }
+        else {
+            statement.setObject(4, null);
+        }
 
         statement.setString(5, reader.getEmail());
 
-        Optional.ofNullable(reader.getPhone()).ifPresent((phone -> {
-            try {
-                statement.setString(6, phone);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }));
+        if(reader.getPhone() != null) {
+            statement.setString(6, reader.getPhone());
+        }
+        else {
+            statement.setObject(6, null);
+        }
 
-        reader.getBook().ifPresent((book -> {
-            try {
-                statement.setInt(7, book.getId());
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }));
+        if(reader.getBook().isPresent()) {
+            statement.setInt(7, reader.getBook().get().getId());
+        }
+        else {
+            statement.setObject(7, null);
+        }
 
         statement.executeUpdate();
 

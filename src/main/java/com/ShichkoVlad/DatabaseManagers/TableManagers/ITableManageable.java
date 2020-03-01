@@ -1,4 +1,4 @@
-package com.ShichkoVlad.DatabaseManagers;
+package com.ShichkoVlad.DatabaseManagers.TableManagers;
 
 import com.ShichkoVlad.Exceptions.AmbiguousFilterException;
 
@@ -9,7 +9,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public interface ITableManagable<T> {
+//Данный интерфейс определяет основные команды для работы с таблицами. Его реализуют менеджеры работы с таблицами, находящиеся в данном пакете.
+public interface ITableManageable<T> {
 
     String getTableName();
     T getInstanceById(int id, Connection connection) throws SQLException, AmbiguousFilterException;
@@ -20,8 +21,8 @@ public interface ITableManagable<T> {
 
         StringBuilder query = new StringBuilder();
         query.append("UPDATE " + getTableName());
-        query.append(" SET " + columnName + "=" + newValue.toString());
-        query.append(" WHERE id = " + id);
+        query.append(" SET " + columnName + "='" + newValue.toString() + "'");
+        query.append(" WHERE id = " + id + ";");
 
         PreparedStatement preparedStatement = connection.prepareStatement(query.toString());
         preparedStatement.executeUpdate();

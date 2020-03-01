@@ -1,4 +1,4 @@
-package com.ShichkoVlad.DatabaseManagers;
+package com.ShichkoVlad.DatabaseManagers.TableManagers;
 
 import com.ShichkoVlad.Book.Author;
 import com.ShichkoVlad.Book.Gender;
@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.Year;
 
-public class AuthorTableManager implements ITableManagable<Author> {
+public class AuthorTableManager implements ITableManageable<Author> {
 
     static final String tableName = "authors";
 
