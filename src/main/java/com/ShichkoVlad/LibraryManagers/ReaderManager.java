@@ -90,7 +90,7 @@ public class ReaderManager {
     }
 
     //Записывает список читателей в базу данных
-    public void writeBooksToDatabase(List<Reader> readers, Connection connection) throws SQLException {
+    public void writeReadersToDatabase(List<Reader> readers, Connection connection) throws SQLException {
 
         ReaderTableManager readerTableManager = new ReaderTableManager();
 

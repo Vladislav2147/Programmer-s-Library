@@ -20,8 +20,8 @@ public interface ITableManagable<T> {
 
         StringBuilder query = new StringBuilder();
         query.append("UPDATE " + getTableName());
-        query.append(" SET " + columnName + "=" + newValue.toString());
-        query.append(" WHERE id = " + id);
+        query.append(" SET " + columnName + "='" + newValue.toString() + "'");
+        query.append(" WHERE id = " + id + ";");
 
         PreparedStatement preparedStatement = connection.prepareStatement(query.toString());
         preparedStatement.executeUpdate();

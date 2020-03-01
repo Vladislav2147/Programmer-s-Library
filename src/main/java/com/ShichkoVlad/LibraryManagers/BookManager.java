@@ -25,8 +25,10 @@ public class BookManager {
 
     public void addNewBook(Book book, Connection connection) throws SQLException {
 
-        PublisherTableManager publisherTableManager = new PublisherTableManager();
-        publisherTableManager.addToTable(book.getPublisher(), connection);
+        if(book.getPublisher() != null) {
+            PublisherTableManager publisherTableManager = new PublisherTableManager();
+            publisherTableManager.addToTable(book.getPublisher(), connection);
+        }
 
         BookTableManager bookTableManager = new BookTableManager();
         bookTableManager.addToTable(book, connection);

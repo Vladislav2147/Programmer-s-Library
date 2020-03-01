@@ -29,7 +29,8 @@ public class Reader implements Serializable {
     }
 
     //Конструктор без Book, добавление/удаление книги через BookManager
-    public Reader(String firstName, String secondName, Year birthYear, String email, String phone, byte[] photo) {
+    public Reader(int id, String firstName, String secondName, Year birthYear, String email, String phone, byte[] photo) {
+        this.id = id;
         this.firstName = firstName;
         this.secondName = secondName;
         this.birthYear = birthYear;
