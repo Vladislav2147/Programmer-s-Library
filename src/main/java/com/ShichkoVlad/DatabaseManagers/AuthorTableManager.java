@@ -12,7 +12,7 @@ import java.time.Year;
 
 public class AuthorTableManager implements ITableManagable<Author> {
 
-    static String tableName = "authors";
+    static final String tableName = "authors";
 
     @Override
     public String getTableName() {

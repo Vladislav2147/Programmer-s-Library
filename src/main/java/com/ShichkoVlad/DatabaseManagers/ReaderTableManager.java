@@ -10,7 +10,7 @@ import java.util.Optional;
 
 public class ReaderTableManager implements ITableManagable<Reader> {
 
-    static String tableName = "readers";
+    static final String tableName = "readers";
 
     @Override
     public String getTableName() {

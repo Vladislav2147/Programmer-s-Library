@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 public class PublisherTableManager implements ITableManagable<Publisher> {
 
-    static String tableName = "publishers";
+    static final String tableName = "publishers";
 
     @Override
     public String getTableName() {

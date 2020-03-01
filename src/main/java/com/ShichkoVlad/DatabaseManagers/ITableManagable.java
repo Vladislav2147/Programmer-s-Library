@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public interface ITableManagable<T> {
 
@@ -14,7 +16,7 @@ public interface ITableManagable<T> {
     void addToTable(T object, Connection connection) throws SQLException;
 
     //На данном этапе метод changeInTable принимает параметром команду, согласно которой изменяет запись с соотв. id
-    default void changeInTable(int id, String columnName, Object newValue, Connection connection) throws SQLException, AmbiguousFilterException {
+    default void changeInTable(int id, String columnName, Object newValue, Connection connection) throws SQLException {
 
         StringBuilder query = new StringBuilder();
         query.append("UPDATE " + getTableName());
@@ -76,12 +78,23 @@ public interface ITableManagable<T> {
 
         ResultSet resultSet = statement.executeQuery();
 
-        if(resultSet.isLast()) {
-            return false;
+        return !resultSet.isLast();
+
+    }
+
+    default List<T> getListFromTable(Connection connection) throws SQLException, AmbiguousFilterException {
+
+        List<T> resultList = new ArrayList<>();
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM " + getTableName() + ";");
+
+        ResultSet resultSet = statement.executeQuery();
+
+        while(resultSet.next()) {
+            T object = getInstanceById(resultSet.getInt("id"), connection);
+            resultList.add(object);
         }
-        else {
-            return true;
-        }
+
+        return resultList;
 
     }
 

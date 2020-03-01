@@ -11,7 +11,7 @@ import java.util.Optional;
 
 public class BookTableManager implements ITableManagable<Book> {
 
-    static String tableName = "books";
+    static final String tableName = "books";
 
     @Override
     public String getTableName() {
@@ -27,7 +27,7 @@ public class BookTableManager implements ITableManagable<Book> {
         book.setId(resultSet.getInt("id"));
         book.setName(resultSet.getString("title"));
         book.setYear(Year.of(resultSet.getInt("publishing_year")));
-        //TODO вынести в bookmanager
+
         if(resultSet.getObject("publisher_id") != null) {
 
             int publisherId = resultSet.getInt("publisher_id");
@@ -44,7 +44,7 @@ public class BookTableManager implements ITableManagable<Book> {
         Optional.ofNullable(resultSet.getObject("copies")).ifPresent((copies) -> {
             book.setCopiesAmount((int)copies);
         });
-        //TODO вынести в bookmanager
+
         book.setAuthors(WrittenByTableManager.getAuthorsByBookId(id, connection));
 
         return book;

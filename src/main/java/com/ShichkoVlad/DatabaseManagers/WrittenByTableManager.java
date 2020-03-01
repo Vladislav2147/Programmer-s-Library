@@ -13,7 +13,7 @@ import java.util.List;
 
 public class WrittenByTableManager {
 
-    static String tableName = "written_by";
+    static final String tableName = "written_by";
 
     public static List<Author> getAuthorsByBookId(int bookId, Connection connection) throws SQLException, AmbiguousFilterException {
 
