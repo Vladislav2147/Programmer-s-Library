@@ -9,6 +9,8 @@ import com.ShichkoVlad.DatabaseManagers.MyConnector;
 import com.ShichkoVlad.Exceptions.AmbiguousFilterException;
 import com.ShichkoVlad.Exceptions.ReaderAlreadyHasBookException;
 import com.ShichkoVlad.LibraryManagers.BookManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 import java.sql.*;
 import java.util.List;
@@ -18,7 +20,8 @@ import java.util.ResourceBundle;
 public class Program {
     public static void main (String[] args) {
 
-
+        PropertyConfigurator.configure("src/main/resources/log4j.properties");
+        Logger logger = Logger.getLogger(Program.class);
 
         try(Connection connect = MyConnector.getConnection()) {
             BookManager bookManager = new BookManager();

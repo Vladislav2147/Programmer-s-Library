@@ -2,29 +2,26 @@ package com.ShichkoVlad.LibraryManagers;
 
 import com.ShichkoVlad.Book.Author;
 import com.ShichkoVlad.Book.Book;
-import com.ShichkoVlad.Book.Publisher;
 import com.ShichkoVlad.DatabaseManagers.*;
 import com.ShichkoVlad.Exceptions.AmbiguousFilterException;
 import com.ShichkoVlad.Exceptions.NoSuchBookException;
-import com.ShichkoVlad.Exceptions.NoSuchReaderException;
 import com.ShichkoVlad.Exceptions.ReaderAlreadyHasBookException;
-import com.ShichkoVlad.Reader.Reader;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.apache.log4j.Logger;
 
-import java.io.*;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.Year;
 import java.util.List;
-import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @Data
 public class BookManager {
+
+    final static Logger logger = Logger.getLogger(BookManager.class);
 
     public void addNewBook(Book book, Connection connection) throws SQLException {
 
@@ -44,14 +41,16 @@ public class BookManager {
             }
         }
 
+        logger.info("new book " + book.getId() + " was added");
+
     }
 
-    public Book getBookById(int id, Connection connection) throws SQLException, AmbiguousFilterException{
+    public Book getBookById(int bookId, Connection connection) throws SQLException, AmbiguousFilterException{
 
         BookTableManager bookTableManager = new BookTableManager();
-        Book book = bookTableManager.getInstanceById(id, connection);
+        Book book = bookTableManager.getInstanceById(bookId, connection);
 
-
+        logger.info("Book " + book.getId() + " was received from database");
 
         return book;
     }
@@ -61,12 +60,16 @@ public class BookManager {
         BookTableManager bookTableManager = new BookTableManager();
         bookTableManager.changeInTable(bookId, "title", "new title", connection);
 
+        logger.info("Book " + bookId + " was changed");
+
     }
 
     public void removeBook(int bookId, Connection connection) throws SQLException {
 
         BookTableManager bookTableManager = new BookTableManager();
         bookTableManager.removeFromTable(bookId, connection);
+
+        logger.info("Book " + bookId + " was changed");
 
     }
 
@@ -84,6 +87,8 @@ public class BookManager {
 
             readerTableManager.changeInTable(readerId, "book_id", bookId, connection);
 
+            logger.info("Book " + bookId + " was given to reader " + readerId);
+
         }
     }
 
@@ -92,6 +97,8 @@ public class BookManager {
 
         ReaderTableManager readerTableManager = new ReaderTableManager();
         readerTableManager.takeBookFromReader(readerId, connection);
+
+        logger.info("Book was taken from reader " + readerId);
 
     }
 
@@ -104,10 +111,16 @@ public class BookManager {
                 .collect(Collectors.toList());
 
         if (books.size() > 0) {
+
+            logger.info("Books were found");
+
             return books;
+
         }
         else {
+
             throw new NoSuchBookException("No books found");
+
         }
 
     }
@@ -136,7 +149,16 @@ public class BookManager {
     public List<Book> getBooksFromDatabase(Connection connection) throws SQLException, AmbiguousFilterException {
 
         BookTableManager bookTableManager = new BookTableManager();
-        return bookTableManager.getListFromTable(connection);
+        List<Book> books = bookTableManager.getListFromTable(connection);
+
+        StringBuilder logString = new StringBuilder("Books ");
+        for(Book book: books) {
+            logString.append(book.getId() + " ");
+        }
+        logString.append(" were recieved from database");
+        logger.info(logString);
+
+        return books;
 
     }
 
@@ -147,6 +169,7 @@ public class BookManager {
 
         for(Book book: books) {
             bookTableManager.addToTable(book, connection);
+            logger.info("Book " + book.getId() + " was added to database");
         }
 
     }
