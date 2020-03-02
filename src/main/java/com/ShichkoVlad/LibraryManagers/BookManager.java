@@ -17,14 +17,15 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-//Данный менеджер упрощает работу с базой данных, предоставляя необходимый по заданию функционал
+
 @AllArgsConstructor
 @Data
-public class BookManager {
+public class BookManager implements ILibraryManager<Book>{
 
     final static Logger logger = Logger.getLogger(BookManager.class);
 
-    public void addNewBook(Book book, Connection connection) throws SQLException {
+    @Override
+    public void addNew(Book book, Connection connection) throws SQLException {
 
         if(book.getPublisher() != null) {
             PublisherTableManager publisherTableManager = new PublisherTableManager();
@@ -48,7 +49,8 @@ public class BookManager {
 
     }
 
-    public Book getBookById(int bookId, Connection connection) throws SQLException, AmbiguousFilterException{
+    @Override
+    public Book getById(int bookId, Connection connection) throws SQLException {
 
         BookTableManager bookTableManager = new BookTableManager();
         Book book = bookTableManager.getInstanceById(bookId, connection);
@@ -58,7 +60,8 @@ public class BookManager {
         return book;
     }
 
-    public void changeBook(int bookId, Connection connection) throws SQLException, AmbiguousFilterException {
+    @Override
+    public void changeItem(int bookId, Connection connection) throws SQLException {
 
         BookTableManager bookTableManager = new BookTableManager();
         bookTableManager.changeInTable(bookId, "title", "new title", connection);
@@ -67,7 +70,8 @@ public class BookManager {
 
     }
 
-    public void removeBook(int bookId, Connection connection) throws SQLException {
+    @Override
+    public void remove(int bookId, Connection connection) throws SQLException {
 
         BookTableManager bookTableManager = new BookTableManager();
         bookTableManager.removeFromTable(bookId, connection);
@@ -77,7 +81,7 @@ public class BookManager {
     }
 
     //Выдача книги читателю
-    public void giveBookToReader(int bookId, int readerId, Connection connection) throws SQLException, AmbiguousFilterException, ReaderAlreadyHasBookException {
+    public void giveBookToReader(int bookId, int readerId, Connection connection) throws SQLException, ReaderAlreadyHasBookException {
 
         ReaderTableManager readerTableManager = new ReaderTableManager();
 
@@ -106,9 +110,9 @@ public class BookManager {
     }
 
     //Методы поиска по книгам
-    public List<Book> find(Predicate<Book> bookPredicate, Connection connection) throws NoSuchBookException, SQLException, AmbiguousFilterException {
+    public List<Book> find(Predicate<Book> bookPredicate, Connection connection) throws NoSuchBookException, SQLException {
 
-        List<Book> books = getBooksFromDatabase(connection)
+        List<Book> books = getListFromDatabase(connection)
                 .stream()
                 .filter(bookPredicate)
                 .collect(Collectors.toList());
@@ -128,20 +132,20 @@ public class BookManager {
 
     }
 
-    public List<Book> findByBookName(String title, Connection connection) throws NoSuchBookException, SQLException, AmbiguousFilterException {
+    public List<Book> findByBookName(String title, Connection connection) throws NoSuchBookException, SQLException {
 
         return find(book -> book.getName().equals(title), connection);
 
     }
 
-    public List<Book> findByYear(Year begin, Year end, Connection connection) throws NoSuchBookException, SQLException, AmbiguousFilterException {
+    public List<Book> findByYear(Year begin, Year end, Connection connection) throws NoSuchBookException, SQLException {
 
         return find(book -> book.getYear().getValue() >= begin.getValue() &&
                 book.getYear().getValue() <= end.getValue(), connection);
 
     }
 
-    public List<Book> findByAuthorName(String authorName, Connection connection) throws NoSuchBookException, SQLException, AmbiguousFilterException {
+    public List<Book> findByAuthorName(String authorName, Connection connection) throws NoSuchBookException, SQLException {
 
         return find(book -> book.getAuthors().stream().anyMatch(author -> authorName.contains(author.getFirstName()) &&
                 authorName.contains(author.getSecondName())), connection);
@@ -149,7 +153,8 @@ public class BookManager {
     }
 
     //Возвращает список всех книг из базы данных
-    public List<Book> getBooksFromDatabase(Connection connection) throws SQLException, AmbiguousFilterException {
+    @Override
+    public List<Book> getListFromDatabase(Connection connection) throws SQLException {
 
         BookTableManager bookTableManager = new BookTableManager();
         List<Book> books = bookTableManager.getListFromTable(connection);
@@ -158,7 +163,7 @@ public class BookManager {
         for(Book book: books) {
             logString.append(book.getId() + " ");
         }
-        logString.append(" were recieved from database");
+        logString.append(" were received from database");
         logger.info(logString);
 
         return books;
@@ -166,7 +171,8 @@ public class BookManager {
     }
 
     //Записывает список книг в базу данных
-    public void writeBooksToDatabase(List<Book> books, Connection connection) throws SQLException {
+    @Override
+    public void setListToDatabase(List<Book> books, Connection connection) throws SQLException {
 
         BookTableManager bookTableManager = new BookTableManager();
 

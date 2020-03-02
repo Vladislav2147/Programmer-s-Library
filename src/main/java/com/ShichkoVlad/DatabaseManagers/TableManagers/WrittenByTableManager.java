@@ -14,7 +14,7 @@ public class WrittenByTableManager {
 
     static final String tableName = "written_by";
 
-    public static List<Author> getAuthorsByBookId(int bookId, Connection connection) throws SQLException, AmbiguousFilterException {
+    public static List<Author> getAuthorsByBookId(int bookId, Connection connection) throws SQLException {
 
         PreparedStatement statement =
                 connection.prepareStatement("SELECT * FROM " + tableName + " WHERE book_id = " + bookId + ";");

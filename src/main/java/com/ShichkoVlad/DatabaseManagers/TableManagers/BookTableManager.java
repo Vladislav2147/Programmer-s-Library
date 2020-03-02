@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.time.Year;
 import java.util.Optional;
 
-public class BookTableManager implements ITableManageable<Book> {
+public class BookTableManager implements ITableManager<Book> {
 
     static final String tableName = "books";
 
@@ -19,7 +19,7 @@ public class BookTableManager implements ITableManageable<Book> {
     }
 
     @Override
-    public Book getInstanceById(int id, Connection connection) throws SQLException, AmbiguousFilterException {
+    public Book getInstanceById(int id, Connection connection) throws SQLException {
 
         ResultSet resultSet = getRowById(id, connection);
         Book book = new Book();

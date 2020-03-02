@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.Year;
 
-public class AuthorTableManager implements ITableManageable<Author> {
+public class AuthorTableManager implements ITableManager<Author> {
 
     static final String tableName = "authors";
 
@@ -20,7 +20,7 @@ public class AuthorTableManager implements ITableManageable<Author> {
     }
 
     @Override
-    public Author getInstanceById(int id, Connection connection) throws SQLException, AmbiguousFilterException {
+    public Author getInstanceById(int id, Connection connection) throws SQLException {
 
         ResultSet resultSet = getRowById(id, connection);
         Author author = new Author();

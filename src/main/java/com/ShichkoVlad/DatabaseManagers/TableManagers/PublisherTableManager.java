@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class PublisherTableManager implements ITableManageable<Publisher> {
+public class PublisherTableManager implements ITableManager<Publisher> {
 
     static final String tableName = "publishers";
 
@@ -19,7 +19,7 @@ public class PublisherTableManager implements ITableManageable<Publisher> {
     }
 
     @Override
-    public Publisher getInstanceById(int id, Connection connection) throws SQLException, AmbiguousFilterException {
+    public Publisher getInstanceById(int id, Connection connection) throws SQLException {
 
         ResultSet resultSet = getRowById(id, connection);
         Publisher publisher = new Publisher();

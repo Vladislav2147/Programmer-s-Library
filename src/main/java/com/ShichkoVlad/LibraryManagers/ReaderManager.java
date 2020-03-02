@@ -12,14 +12,14 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-//Данный менеджер упрощает работу с базой данных, предоставляя необходимый по заданию функционал
 @AllArgsConstructor
 @Data
-public class ReaderManager {
+public class ReaderManager implements ILibraryManager<Reader> {
 
     final static Logger logger = Logger.getLogger(ReaderManager.class);
 
-    public void addNewReader(Reader reader, Connection connection) throws SQLException {
+    @Override
+    public void addNew(Reader reader, Connection connection) throws SQLException {
 
         ReaderTableManager readerTableManager = new ReaderTableManager();
         readerTableManager.addToTable(reader, connection);
@@ -27,7 +27,8 @@ public class ReaderManager {
 
     }
 
-    public Reader getReaderById(int readerId, Connection connection) throws SQLException, AmbiguousFilterException {
+    @Override
+    public Reader getById(int readerId, Connection connection) throws SQLException {
 
         ReaderTableManager readerTableManager = new ReaderTableManager();
         Reader reader = readerTableManager.getInstanceById(readerId, connection);
@@ -37,7 +38,8 @@ public class ReaderManager {
 
     }
 
-    public void changeReader(int readerId, Connection connection) throws SQLException {
+    @Override
+    public void changeItem(int readerId, Connection connection) throws SQLException {
 
         ReaderTableManager readerTableManager = new ReaderTableManager();
         readerTableManager.changeInTable(readerId, "first_name", "new_name", connection);
@@ -45,7 +47,8 @@ public class ReaderManager {
 
     }
 
-    public void removeReader(int readerId, Connection connection) throws SQLException {
+    @Override
+    public void remove(int readerId, Connection connection) throws SQLException {
 
         ReaderTableManager readerTableManager = new ReaderTableManager();
         readerTableManager.removeFromTable(readerId, connection);
@@ -53,11 +56,11 @@ public class ReaderManager {
 
     }
 
-    public Reader findByEmail(String email, Connection connection) throws NoSuchReaderException, SQLException, AmbiguousFilterException {
+    public Reader findByEmail(String email, Connection connection) throws NoSuchReaderException, SQLException {
 
-        if (getReadersFromDatabase(connection).stream().anyMatch(reader -> reader.getEmail().equals(email))) {
+        if (getListFromDatabase(connection).stream().anyMatch(reader -> reader.getEmail().equals(email))) {
 
-            Reader resultReader = getReadersFromDatabase(connection).stream()
+            Reader resultReader = getListFromDatabase(connection).stream()
                     .filter(reader -> reader.getEmail().equals(email))
                     .findFirst()
                     .get();
@@ -73,7 +76,8 @@ public class ReaderManager {
 
     }
 
-    public List<Reader> getReadersFromDatabase(Connection connection) throws SQLException, AmbiguousFilterException {
+    @Override
+    public List<Reader> getListFromDatabase(Connection connection) throws SQLException {
 
         ReaderTableManager readerTableManager = new ReaderTableManager();
         List<Reader> readers = readerTableManager.getListFromTable(connection);
@@ -90,7 +94,8 @@ public class ReaderManager {
     }
 
     //Записывает список читателей в базу данных
-    public void writeReadersToDatabase(List<Reader> readers, Connection connection) throws SQLException {
+    @Override
+    public void setListToDatabase(List<Reader> readers, Connection connection) throws SQLException {
 
         ReaderTableManager readerTableManager = new ReaderTableManager();
 

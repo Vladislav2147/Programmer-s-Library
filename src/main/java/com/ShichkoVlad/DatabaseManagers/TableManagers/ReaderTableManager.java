@@ -7,7 +7,7 @@ import java.sql.*;
 import java.time.Year;
 import java.util.Optional;
 
-public class ReaderTableManager implements ITableManageable<Reader> {
+public class ReaderTableManager implements ITableManager<Reader> {
 
     static final String tableName = "readers";
 
@@ -17,7 +17,7 @@ public class ReaderTableManager implements ITableManageable<Reader> {
     }
 
     @Override
-    public Reader getInstanceById(int id, Connection connection) throws SQLException, AmbiguousFilterException {
+    public Reader getInstanceById(int id, Connection connection) throws SQLException {
 
         ResultSet resultSet = getRowById(id, connection);
         Reader reader = new Reader();

@@ -14,7 +14,6 @@ import org.apache.log4j.PropertyConfigurator;
 
 import java.sql.*;
 import java.time.Year;
-import java.util.List;
 
 public class Program {
     public static void main (String[] args) {
@@ -31,10 +30,10 @@ public class Program {
             bookManager.giveBookToReader(2, 1, connect);
 
             Book myBook = new Book(4, "my book", Year.of(2006));
-            bookManager.addNewBook(myBook, connect);
+            bookManager.addNew(myBook, connect);
 
             System.out.println("\nBooks from database: ");
-            for(Book book: bookManager.getBooksFromDatabase(connect)) {
+            for(Book book: bookManager.getListFromDatabase(connect)) {
                 System.out.println(book);
             }
 
@@ -48,7 +47,7 @@ public class Program {
                 System.out.println(book);
             }
 
-            bookManager.removeBook(myBook.getId(), connect);
+            bookManager.remove(myBook.getId(), connect);
 
         } catch(SQLException | AmbiguousFilterException | ReaderAlreadyHasBookException | NoSuchBookException e) {
             logger.error("exception" + e.getMessage());
@@ -60,19 +59,19 @@ public class Program {
             ReaderManager readerManager = new ReaderManager();
 
             System.out.println("\nReader with id = 1:");
-            System.out.println(readerManager.getReaderById(1, connect));
+            System.out.println(readerManager.getById(1, connect));
 
             System.out.println("\nChange name of first reader: ");
-            readerManager.changeReader(1, connect);
-            System.out.println(readerManager.getReaderById(1, connect));
+            readerManager.changeItem(1, connect);
+            System.out.println(readerManager.getById(1, connect));
 
             Reader reader = new Reader(4, "name", "surname", "anotherreader@yandex.ru");
 
-            readerManager.addNewReader(reader, connect);
+            readerManager.addNew(reader, connect);
             System.out.println("\nReader with email 'anotherreader@yandex.ru': ");
             System.out.println(readerManager.findByEmail("anotherreader@yandex.ru", connect));
 
-            readerManager.removeReader(reader.getId(), connect);
+            readerManager.remove(reader.getId(), connect);
 
 
         } catch(SQLException | AmbiguousFilterException | NoSuchReaderException e) {

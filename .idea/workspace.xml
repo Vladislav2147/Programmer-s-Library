@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cafc51a7-54af-4640-bf3b-917ce00e76c7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/LibraryManagers/ILibraryManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/AuthorTableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/TableManagers/AuthorTableManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/BookTableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/TableManagers/BookTableManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/ITableManagable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/TableManagers/ITableManageable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/PublisherTableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/TableManagers/PublisherTableManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/ReaderTableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/TableManagers/ReaderTableManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/WrittenByTableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/TableManagers/WrittenByTableManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/TableManagers/AuthorTableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/TableManagers/AuthorTableManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/TableManagers/BookTableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/TableManagers/BookTableManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/TableManagers/ITableManageable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/TableManagers/ITableManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/TableManagers/PublisherTableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/TableManagers/PublisherTableManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/TableManagers/ReaderTableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/TableManagers/ReaderTableManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/TableManagers/WrittenByTableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/DatabaseManagers/TableManagers/WrittenByTableManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/LibraryManagers/BookManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/LibraryManagers/BookManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/LibraryManagers/ReaderManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/LibraryManagers/ReaderManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ShichkoVlad/Program.java" afterDir="false" />
     </list>
     <list id="54489d80-80b0-4d4f-b54f-558115bac925" name="Revert &quot;FIRST TASK FINAL VERSION&quot;" comment="Revert &quot;FIRST TASK FINAL VERSION&quot;&#10;&#10;This reverts commit 53216c7d">
       <change beforePath="$PROJECT_DIR$/.idea/libraries/log4j_1_2_17.xml" beforeDir="false" />
@@ -56,8 +58,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -197,7 +199,9 @@
       <workItem from="1582973023579" duration="39000" />
       <workItem from="1582973870107" duration="3574000" />
       <workItem from="1582986532138" duration="17465000" />
-      <workItem from="1583050923014" duration="12463000" />
+      <workItem from="1583050923014" duration="13119000" />
+      <workItem from="1583138328075" duration="836000" />
+      <workItem from="1583146837535" duration="2405000" />
     </task>
     <task id="LOCAL-00001" summary="create Program.java">
       <created>1581840804399</created>
@@ -339,7 +343,21 @@
       <option name="project" value="LOCAL" />
       <updated>1583064954174</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="TASK 2 FINAL COMMIT">
+      <created>1583065311224</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1583065311224</updated>
+    </task>
+    <task id="LOCAL-00022" summary="TASK 2 FINAL COMMIT">
+      <created>1583065390055</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1583065390055</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,10 +421,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="526" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1582397686859" />
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1582998136124">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1583148288373">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1582998136124" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1583148288373" />
     <state x="400" y="101" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1582736195587">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -415,14 +433,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="201" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1583010160604" />
-    <state x="514" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1583015065848">
+    <state x="514" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1583149076633">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="514" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1583015065848" />
-    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1583065310032">
+    <state x="514" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1583149076633" />
+    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1583065388964">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583065310032" />
+    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583065388964" />
     <state x="147" y="65" key="DiffContextDialog" timestamp="1582119087705">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -431,38 +449,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582217525335" />
-    <state width="1493" height="143" key="GridCell.Tab.0.bottom" timestamp="1583064493567">
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1583065849150">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583064493567" />
-    <state width="1493" height="143" key="GridCell.Tab.0.center" timestamp="1583064493567">
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583065849150" />
+    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1583065849149">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583064493567" />
-    <state width="1493" height="143" key="GridCell.Tab.0.left" timestamp="1583064493566">
+    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583065849149" />
+    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1583065849149">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583064493566" />
-    <state width="1493" height="143" key="GridCell.Tab.0.right" timestamp="1583064493567">
+    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583065849149" />
+    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1583065849150">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583064493567" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1583059106266">
+    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583065849150" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1583065849150">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583059106266" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1583059106266">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583065849150" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1583065849150">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1583059106266" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1583059106266">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1583065849150" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1583065849150">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1583059106266" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1583059106266">
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1583065849150" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1583065849150">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1583059106266" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1583065849150" />
     <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1581959370429">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -483,14 +501,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1583014963598" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1583065313312">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1583065398991">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1583065313312" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1583050950790">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1583065398991" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1583146837787">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1583050950790" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1583146837787" />
     <state x="330" y="148" width="876" height="601" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1582367102250">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

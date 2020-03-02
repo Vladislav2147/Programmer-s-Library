@@ -10,21 +10,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 //Данный интерфейс определяет основные команды для работы с таблицами. Его реализуют менеджеры работы с таблицами, находящиеся в данном пакете.
-public interface ITableManageable<T> {
+public interface ITableManager<T> {
 
     String getTableName();
-    T getInstanceById(int id, Connection connection) throws SQLException, AmbiguousFilterException;
+    T getInstanceById(int id, Connection connection) throws SQLException;
     void addToTable(T object, Connection connection) throws SQLException;
 
     //На данном этапе метод changeInTable принимает параметром команду, согласно которой изменяет запись с соотв. id
     default void changeInTable(int id, String columnName, Object newValue, Connection connection) throws SQLException {
 
-        StringBuilder query = new StringBuilder();
-        query.append("UPDATE " + getTableName());
-        query.append(" SET " + columnName + "='" + newValue.toString() + "'");
-        query.append(" WHERE id = " + id + ";");
-
-        PreparedStatement preparedStatement = connection.prepareStatement(query.toString());
+        String query = "UPDATE " + getTableName() +
+                " SET " + columnName + "='" + newValue.toString() + "'" +
+                " WHERE id = " + id + ";";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.executeUpdate();
 
     }
@@ -48,7 +46,7 @@ public interface ITableManageable<T> {
     }
 
 
-    default ResultSet getRowById(int id, Connection connection) throws SQLException, AmbiguousFilterException {
+    default ResultSet getRowById(int id, Connection connection) throws SQLException {
 
         PreparedStatement statement =
                 connection.prepareStatement("SELECT * FROM " + getTableName() + " WHERE id = " + id + ";");
@@ -56,12 +54,8 @@ public interface ITableManageable<T> {
         ResultSet resultSet = statement.executeQuery();
         resultSet.next();
 
-        if (resultSet.isLast()) {
-            return resultSet;
-        }
-        else {
-            throw new AmbiguousFilterException("ambiguous id: " + id);
-        }
+        return resultSet;
+
     }
 
 
@@ -83,7 +77,7 @@ public interface ITableManageable<T> {
 
     }
 
-    default List<T> getListFromTable(Connection connection) throws SQLException, AmbiguousFilterException {
+    default List<T> getListFromTable(Connection connection) throws SQLException {
 
         List<T> resultList = new ArrayList<>();
         PreparedStatement statement = connection.prepareStatement("SELECT * FROM " + getTableName() + ";");
