@@ -13,7 +13,8 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
 import java.io.IOException;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.time.Year;
 
 public class Program {
@@ -92,6 +93,6 @@ public class Program {
             System.out.println(e);
         }
 
-        logger.info("--------Program ends--------");
+        logger.info("--------Program ends--------\n");
     }
 }
