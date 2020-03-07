@@ -31,11 +31,11 @@ public class Program {
             List<Book> books = bookManager.getListFromDatabase(connect);
 
             System.out.println(readers);
-            JsonListSerializer<Book> bookJsonListSerializer = new JsonListSerializer<>();
             JsonListSerializer<Reader> readerJsonListSerializer = new JsonListSerializer<>();
 
+            readerJsonListSerializer.Serialize(readers, "readers.json");
 
-        } catch(SQLException /*| IOException | ReaderAlreadyHasBookException | NoSuchBookException*/ e) {
+        } catch(SQLException | IOException /*| ReaderAlreadyHasBookException | NoSuchBookException*/ e) {
             logger.error("exception" + e.getMessage());
             System.out.println(e);
         }

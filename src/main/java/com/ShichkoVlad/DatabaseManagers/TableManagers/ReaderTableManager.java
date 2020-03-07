@@ -34,6 +34,15 @@ public class ReaderTableManager implements ITableManager<Reader> {
             reader.setPhone(phone.toString());
         });
 
+        Optional.ofNullable(resultSet.getObject("book_id")).ifPresent((bookId) -> {
+            BookTableManager bookTableManager = new BookTableManager();
+            try {
+                reader.setBook(bookTableManager.getInstanceById((int)bookId, connection));
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        });
+
         return reader;
 
     }
@@ -64,8 +73,8 @@ public class ReaderTableManager implements ITableManager<Reader> {
             statement.setObject(6, null);
         }
 
-        if(reader.getBook().isPresent()) {
-            statement.setInt(7, reader.getBook().get().getId());
+        if(reader.getBook() != null) {
+            statement.setInt(7, reader.getBook().getId());
         }
         else {
             statement.setObject(7, null);

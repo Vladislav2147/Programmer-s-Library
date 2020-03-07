@@ -18,7 +18,7 @@ public class Reader implements Serializable {
     private String email;
     private String phone;
     private byte[] photo;
-    private Optional<Book> book = Optional.empty();
+    private Book book;
 
     //Конструктор обязательных полей
     public Reader(int id, String firstName, String secondName, String email) {

@@ -31,7 +31,7 @@ public class ReaderManager implements ILibraryManager<Reader> {
 
         ReaderTableManager readerTableManager = new ReaderTableManager();
         Reader reader = readerTableManager.getInstanceById(readerId, connection);
-        logger.info("Reader " + readerId + " was recieved from database");
+        logger.info("Reader " + readerId + " was received from database");
 
         return reader;
 
