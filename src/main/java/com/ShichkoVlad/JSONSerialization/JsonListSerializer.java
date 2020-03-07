@@ -15,24 +15,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class JsonAuthorSerializer {
+public class JsonListSerializer<T> {
     private ObjectMapper mapper;
 
-    public JsonAuthorSerializer() {
+    public JsonListSerializer() {
         mapper = new ObjectMapper();
     }
 
-    public JsonAuthorSerializer(ObjectMapper mapper) {
-        this.mapper = mapper;
+    public void Serialize(List<T> items, String path) throws IOException {
+
+        mapper.writerWithDefaultPrettyPrinter().writeValue(new File(path), items);
+
     }
 
-    public void Serialize(Author author, String path) throws IOException {
-        String json = mapper.writeValueAsString(author);
-        mapper.writeValue(new File(path), json);
-    }
+    public List<T> Deserialize(String path) throws IOException {
 
-    public Author Deserialize(String path) throws IOException {
-        mapper.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
-        return mapper.readValue(new File(path), Author.class);
+        return mapper.readValue(new File("readers.json"), List.class);
+
     }
 }
