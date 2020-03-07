@@ -2,6 +2,8 @@ package com.ShichkoVlad;
 
 import com.ShichkoVlad.Book.Book;
 import com.ShichkoVlad.DatabaseManagers.MyConnector;
+import com.ShichkoVlad.Excel.BooksCollectionExcel;
+import com.ShichkoVlad.Excel.ReadersCollectionExcel;
 import com.ShichkoVlad.Exceptions.NoSuchBookException;
 import com.ShichkoVlad.Exceptions.NoSuchReaderException;
 import com.ShichkoVlad.Exceptions.ReaderAlreadyHasBookException;
@@ -57,6 +59,9 @@ public class Program {
             System.out.println("\nBooks from json file: ");
             System.out.println(bookJsonListSerializer.Deserialize("books.json"));
 
+            BooksCollectionExcel booksToExcel = new BooksCollectionExcel();
+            booksToExcel.write(bookManager.getListFromDatabase(connect), "books.xlsx");
+
 
         } catch(SQLException | ReaderAlreadyHasBookException | NoSuchBookException | IOException e) {
             logger.error("exception" + e.getMessage());
@@ -87,6 +92,9 @@ public class Program {
 
             System.out.println("\nReaders from json file: ");
             System.out.println(readerJsonListSerializer.Deserialize("readers.json"));
+
+            ReadersCollectionExcel readersCollectionExcel = new ReadersCollectionExcel();
+            readersCollectionExcel.write(readerManager.getListFromDatabase(connect), "readers.xlsx");
 
         } catch(SQLException | NoSuchReaderException | IOException e) {
             logger.error("exception" + e.getMessage());
