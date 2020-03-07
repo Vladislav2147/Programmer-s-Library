@@ -1,7 +1,6 @@
 package com.ShichkoVlad.LibraryManagers;
 
 import com.ShichkoVlad.DatabaseManagers.TableManagers.ReaderTableManager;
-import com.ShichkoVlad.Exceptions.AmbiguousFilterException;
 import com.ShichkoVlad.Exceptions.NoSuchReaderException;
 import com.ShichkoVlad.Reader.Reader;
 import lombok.AllArgsConstructor;

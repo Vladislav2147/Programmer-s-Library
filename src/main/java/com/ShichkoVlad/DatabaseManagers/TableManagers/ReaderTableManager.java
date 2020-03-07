@@ -1,6 +1,5 @@
 package com.ShichkoVlad.DatabaseManagers.TableManagers;
 
-import com.ShichkoVlad.Exceptions.AmbiguousFilterException;
 import com.ShichkoVlad.Reader.Reader;
 
 import java.sql.*;

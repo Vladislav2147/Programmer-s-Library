@@ -1,5 +1,11 @@
 package com.ShichkoVlad.Book;
 
+import com.ShichkoVlad.JSONSerialization.LocalDateSerialization.LocalDateDeserializer;
+import com.ShichkoVlad.JSONSerialization.LocalDateSerialization.LocalDateSerializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.YearDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.YearSerializer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,8 +22,14 @@ import java.util.*;
 public class Book implements Serializable {
     private int id;
     private String name;
+
+    @JsonSerialize(using = YearSerializer.class)
+    @JsonDeserialize(using = YearDeserializer.class)
     private Year year;
     private Publisher publisher;
+
+    @JsonSerialize(using = LocalDateSerializer.class)
+    @JsonDeserialize(using = LocalDateDeserializer.class)
     private LocalDate publishingDate;
     private Integer copiesAmount;
     private List<Author> authors = new ArrayList<>();

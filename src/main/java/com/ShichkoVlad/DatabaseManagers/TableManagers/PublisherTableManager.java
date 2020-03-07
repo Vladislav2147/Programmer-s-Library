@@ -2,7 +2,6 @@ package com.ShichkoVlad.DatabaseManagers.TableManagers;
 
 import com.ShichkoVlad.Book.Country;
 import com.ShichkoVlad.Book.Publisher;
-import com.ShichkoVlad.Exceptions.AmbiguousFilterException;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -2,7 +2,6 @@ package com.ShichkoVlad.DatabaseManagers.TableManagers;
 
 import com.ShichkoVlad.Book.Author;
 import com.ShichkoVlad.Book.Gender;
-import com.ShichkoVlad.Exceptions.AmbiguousFilterException;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
