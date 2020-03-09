@@ -38,6 +38,10 @@ public class BookManager implements ILibraryManager<Book>{
         for(Author author: book.getAuthors()) {
             try {
                 authorTableManager.addToTable(author, connection);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            try {
                 WrittenByTableManager.setAuthorOfBook(book.getId(), author.getId(), connection);
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -74,8 +78,9 @@ public class BookManager implements ILibraryManager<Book>{
 
         BookTableManager bookTableManager = new BookTableManager();
         bookTableManager.removeFromTable(bookId, connection);
+        WrittenByTableManager.remove(bookId, connection);
 
-        logger.info("Book " + bookId + " was changed");
+        logger.info("Book " + bookId + " was removed from database");
 
     }
 

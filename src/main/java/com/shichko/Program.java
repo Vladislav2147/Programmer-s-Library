@@ -65,7 +65,7 @@ public class Program {
 
         } catch(SQLException | ReaderAlreadyHasBookException | NoSuchBookException | IOException e) {
             logger.error("exception" + e.getMessage());
-            System.out.println(e);
+            e.printStackTrace();
         }
 
         try(Connection connect = MyConnector.getConnection()) {
@@ -98,7 +98,7 @@ public class Program {
 
         } catch(SQLException | NoSuchReaderException | IOException e) {
             logger.error("exception" + e.getMessage());
-            System.out.println(e);
+            e.printStackTrace();
         }
 
         logger.info("--------Program ends--------\n");

@@ -35,7 +35,7 @@ public class WrittenByTableManager {
 
     public static void setAuthorOfBook(int bookId, int authorId, Connection connection) throws SQLException {
 
-        String query = "INSERT INTO " + tableName + " (author_id, book_id) value (?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO " + tableName + " (author_id, book_id) value (?, ?)";
 
         PreparedStatement statement = connection.prepareStatement(query);
 
@@ -45,4 +45,13 @@ public class WrittenByTableManager {
         statement.executeUpdate();
 
     }
+
+    public static void remove(int bookId, Connection connection) throws SQLException {
+
+        PreparedStatement statement = connection.prepareStatement("DELETE FROM written_by WHERE book_id = " + bookId + ";");
+        statement.executeUpdate();
+
+    }
+
+
 }
